@@ -40,17 +40,19 @@ namespace Midas.VeiculoZ.Forms
             System.Windows.Forms.MenuItem miRelatorios_GraficoConsumoMedio = new System.Windows.Forms.MenuItem();
             System.Windows.Forms.MenuItem miRelatorios_RelatorioConsumoMedio = new System.Windows.Forms.MenuItem();
             System.Windows.Forms.MenuItem miRelatorios_RelatorioGeral = new System.Windows.Forms.MenuItem();
+            System.Windows.Forms.MenuItem miRelatorios_GraficoDespesas = new System.Windows.Forms.MenuItem();
 
             miRelatorios_RelatorioGeral.Text = "Relatório Geral";
             miRelatorios_RelatorioConsumoMedio.Text = "Relatório Consumo Médio";
             miRelatorios_GraficoConsumoMedio.Text = "Gráfico Consumo Médio";
             miRelatorios.MenuItems.Add(miRelatorios_GraficoConsumoMedio);
+            miRelatorios.MenuItems.Add(miRelatorios_GraficoDespesas);
             miRelatorios.MenuItems.Add(miRelatorios_RelatorioConsumoMedio);
             miRelatorios.MenuItems.Add(miRelatorios_RelatorioGeral);
             miRelatorios_GraficoConsumoMedio.Click += new System.EventHandler(miRelatorios_GraficoConsumoMedio_Click);
             miRelatorios_RelatorioConsumoMedio.Click += new System.EventHandler(miRelatorios_RelatorioConsumoMedio_Click);
             miRelatorios_RelatorioGeral.Click += new System.EventHandler(miRelatorios_RelatorioConsumoGeral_Click);
-            
+            miRelatorios_GraficoDespesas.Click += new System.EventHandler(miRelatorios_GraficoDespesas_Click);
 
             System.Windows.Forms.MenuItem miOpcoes = new System.Windows.Forms.MenuItem();
             System.Windows.Forms.MenuItem miOpcoesSobre = new System.Windows.Forms.MenuItem();
@@ -199,6 +201,11 @@ namespace Midas.VeiculoZ.Forms
         private void miRelatorios_RelatorioConsumoGeral_Click(object sender, EventArgs e)
         {
             Program.FormStack.Push(typeof(RelatorioGeral));
+        }
+
+        private void miRelatorios_GraficoDespesas_Click(object sender, EventArgs e)
+        {
+            Program.FormStack.Push(typeof(FiltrosGraficoDespesas));
         }
 
         private void miOpcoesDespesas_Empresa_Click(object sender, EventArgs e)
