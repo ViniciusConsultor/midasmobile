@@ -183,6 +183,18 @@
       <DependentUpon>CadastroAbastecimento.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ConstrutorMenu.cs" />
+    <Compile Include="Forms\FiltrosGraficoDespesas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FiltrosGraficoDespesas.Designer.cs">
+      <DependentUpon>FiltrosGraficoDespesas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\GraficoDespesas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\GraficoDespesas.Designer.cs">
+      <DependentUpon>GraficoDespesas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\CRUDFormVeiculoZ.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -561,6 +573,14 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CadastroMulta.resx">
       <DependentUpon>CadastroMulta.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FiltrosGraficoDespesas.resx">
+      <DependentUpon>FiltrosGraficoDespesas.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\GraficoDespesas.resx">
+      <DependentUpon>GraficoDespesas.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ListagemMultas.resx">
