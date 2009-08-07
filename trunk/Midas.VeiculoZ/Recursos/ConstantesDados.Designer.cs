@@ -58,6 +58,42 @@ namespace Midas.VeiculoZ.Recursos {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to alter table abastecimento alter column valor money.
+        /// </summary>
+        internal static string AlterarTabelaAbastecimento_CorrecaoValor_Versao1_1 {
+            get {
+                return ResourceManager.GetString("AlterarTabelaAbastecimento_CorrecaoValor_Versao1_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to alter table abastecimento alter column valorlitro money.
+        /// </summary>
+        internal static string AlterarTabelaAbastecimento_CorrecaoValorLitro_Versao1_1 {
+            get {
+                return ResourceManager.GetString("AlterarTabelaAbastecimento_CorrecaoValorLitro_Versao1_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to alter table despesa alter column valor money.
+        /// </summary>
+        internal static string AlterarTabelaDespesa_CorrecaoValor_Versao1_1 {
+            get {
+                return ResourceManager.GetString("AlterarTabelaDespesa_CorrecaoValor_Versao1_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to alter table percurso alter column consumomedio float.
+        /// </summary>
+        internal static string AlterarTabelaPercurso_CorrecaoConsumoMedio_Versao1_1 {
+            get {
+                return ResourceManager.GetString("AlterarTabelaPercurso_CorrecaoConsumoMedio_Versao1_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to update abastecimento set idposto=@idposto, data=@data, observacoes=@observacoes, tanquecheio=@tanquecheio, idtipoabastecimento=@idtipoabastecimento, valor=@valor, valorlitro=@valorlitro where id = @id.
         /// </summary>
         internal static string AtualizarAbastecimento {
@@ -801,7 +837,16 @@ namespace Midas.VeiculoZ.Recursos {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to create table abastecimento (id int identity(1,1) not null primary key, idposto int references posto(id), data datetime, observacoes ntext, tanquecheio bit, idtipoabastecimento int references tipocombustivel(id), valor decimal, valorlitro decimal).
+        ///   Looks up a localized string similar to create table abastecimento  (
+        ///	id int identity(1,1) not null primary key, 
+        ///	idposto int references posto(id), 
+        ///	data datetime, 
+        ///	observacoes ntext, 
+        ///	tanquecheio bit, 
+        ///	idtipoabastecimento int references tipocombustivel(id), 
+        ///	valor money, 
+        ///	valorlitro money
+        ///).
         /// </summary>
         internal static string TabelaAbastecimento {
             get {
@@ -810,7 +855,15 @@ namespace Midas.VeiculoZ.Recursos {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to create table despesa (id int identity(1,1) not null primary key, descricao nvarchar(255), data datetime, idempresa int, valor decimal, idtipo int references tipodespesa(id), idveiculo int references veiculo(id)).
+        ///   Looks up a localized string similar to create table despesa (
+        ///	id int identity(1,1) not null primary key, 
+        ///	descricao nvarchar(255), 
+        ///	data datetime, 
+        ///	idempresa int, 
+        ///	valor money, 
+        ///	idtipo int references tipodespesa(id), 
+        ///	idveiculo int references veiculo(id)
+        ///).
         /// </summary>
         internal static string TabelaDespesa {
             get {
@@ -855,7 +908,16 @@ namespace Midas.VeiculoZ.Recursos {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to create table percurso (id int identity(1,1) not null primary key, odometroinicial bigint, odometrofinal bigint, idveiculo int references veiculo(id), viagem bit, idabastecimentoinicial int references abastecimento(id), idabastecimentofinal int references abastecimento(id),consumomedio decimal).
+        ///   Looks up a localized string similar to create table percurso (
+        ///	id int identity(1,1) not null primary key, 
+        ///	odometroinicial bigint, 
+        ///	odometrofinal bigint, 
+        ///	idveiculo int references veiculo(id), 
+        ///	viagem bit, 
+        ///	idabastecimentoinicial int references abastecimento(id), 
+        ///	idabastecimentofinal int references abastecimento(id),
+        ///	consumomedio float
+        ///).
         /// </summary>
         internal static string TabelaPercurso {
             get {

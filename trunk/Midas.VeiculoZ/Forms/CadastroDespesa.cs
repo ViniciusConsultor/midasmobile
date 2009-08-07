@@ -99,7 +99,7 @@ namespace Midas.VeiculoZ.Forms
             {
                 try
                 {
-                    despesa.Valor = Decimal.Parse(tValor.Text);
+                    despesa.Valor = Double.Parse(tValor.Text);
                 }
                 catch (Exception e)
                 {

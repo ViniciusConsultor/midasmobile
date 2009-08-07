@@ -44,7 +44,6 @@ namespace Midas.VeiculoZ.Negocio
             {
                 servidor.CriarBancoDados();
                 this.IniciarTabelas();
-                this.CriarDadosIniciais();
             }
             else
             {
@@ -53,7 +52,7 @@ namespace Midas.VeiculoZ.Negocio
             
         }
 
-        private void CriarDadosIniciais()
+        private void CriarSituacoesMulta()
         {
             SituacaoMulta situacaoEmTramitacao = new SituacaoMulta();
             situacaoEmTramitacao.Nome = "Em Tramitação";
@@ -66,7 +65,10 @@ namespace Midas.VeiculoZ.Negocio
             SituacaoMulta situacaoPago = new SituacaoMulta();
             situacaoPago.Nome = "Pago";
             Negocio.NegocioFactory.Instancia.SituacaoMultaNegocio.Salvar(situacaoPago);
+        }
 
+        private void CriarDistribuidoras()
+        {
             Distribuidora shell = new Distribuidora();
             shell.Nome = "Shell";
             VeiculozFachada.Instancia.SalvarDistribuidora(shell);
@@ -86,11 +88,15 @@ namespace Midas.VeiculoZ.Negocio
             Distribuidora texaco = new Distribuidora();
             texaco.Nome = "Texaco";
             VeiculozFachada.Instancia.SalvarDistribuidora(texaco);
+        }
 
+        private void CriarTiposCombustivel()
+        {
             TipoCombustivel alcool = new TipoCombustivel();
             alcool.Nome = "Álcool";
             VeiculozFachada.Instancia.SalvarTipoCombustivel(alcool);
 
+         
             TipoCombustivel gasolina = new TipoCombustivel();
             gasolina.Nome = "Gasolina Aditivada";
             VeiculozFachada.Instancia.SalvarTipoCombustivel(gasolina);
@@ -110,18 +116,32 @@ namespace Midas.VeiculoZ.Negocio
 
         private void IniciarTabelas()
         {
-            try { new Comando(ConstantesDados.TabelaTipoCombustivel, ConstantesGerais.BancoVeiculoZ).Executar(); } catch (Exception e) { }
+            try { 
+                new Comando(ConstantesDados.TabelaTipoCombustivel, ConstantesGerais.BancoVeiculoZ).Executar();
+                this.CriarTiposCombustivel();
+            } catch (Exception e) { }
             try { new Comando(ConstantesDados.TabelaVeiculo, ConstantesGerais.BancoVeiculoZ).Executar(); } catch (Exception e) { }
-            try { new Comando(ConstantesDados.TabelaDistribuidora, ConstantesGerais.BancoVeiculoZ).Executar(); } catch (Exception e) { }
+            try { 
+                new Comando(ConstantesDados.TabelaDistribuidora, ConstantesGerais.BancoVeiculoZ).Executar();
+                this.CriarDistribuidoras();
+            } catch (Exception e) { }
             try { new Comando(ConstantesDados.TabelaPosto, ConstantesGerais.BancoVeiculoZ).Executar(); } catch (Exception e) { }
             try { new Comando(ConstantesDados.TabelaAbastecimento, ConstantesGerais.BancoVeiculoZ).Executar(); } catch (Exception e) { }
             try { new Comando(ConstantesDados.TabelaPercurso, ConstantesGerais.BancoVeiculoZ).Executar(); } catch (Exception e) { }
             try { new Comando(ConstantesDados.TabelaTipoDespesa, ConstantesGerais.BancoVeiculoZ).Executar(); } catch (Exception e) { }
             try { new Comando(ConstantesDados.TabelaDespesa, ConstantesGerais.BancoVeiculoZ).Executar(); } catch (Exception e) { }
             try { new Comando(ConstantesDados.TabelaManutencao, ConstantesGerais.BancoVeiculoZ).Executar(); } catch (Exception e) { }
-            try { new Comando(ConstantesDados.TabelaSituacaoMulta, ConstantesGerais.BancoVeiculoZ).Executar(); } catch (Exception e) { }
+            try { 
+                new Comando(ConstantesDados.TabelaSituacaoMulta, ConstantesGerais.BancoVeiculoZ).Executar();
+                this.CriarSituacoesMulta();
+            } catch (Exception e) { }
             try { new Comando(ConstantesDados.TabelaMulta, ConstantesGerais.BancoVeiculoZ).Executar(); } catch (Exception e) { }
             try { new Comando(ConstantesDados.IndicePercursoVeiculo, ConstantesGerais.BancoVeiculoZ).Executar(); } catch (Exception e) { }
+            
+            try { new Comando(ConstantesDados.AlterarTabelaAbastecimento_CorrecaoValor_Versao1_1, ConstantesGerais.BancoVeiculoZ).Executar(); } catch (Exception e) { }
+            try { new Comando(ConstantesDados.AlterarTabelaAbastecimento_CorrecaoValorLitro_Versao1_1, ConstantesGerais.BancoVeiculoZ).Executar(); } catch (Exception e) { }
+            try { new Comando(ConstantesDados.AlterarTabelaDespesa_CorrecaoValor_Versao1_1, ConstantesGerais.BancoVeiculoZ).Executar(); } catch (Exception e) { }
+            try { new Comando(ConstantesDados.AlterarTabelaPercurso_CorrecaoConsumoMedio_Versao1_1, ConstantesGerais.BancoVeiculoZ).Executar(); } catch (Exception e) { }
         }
 
         #endregion

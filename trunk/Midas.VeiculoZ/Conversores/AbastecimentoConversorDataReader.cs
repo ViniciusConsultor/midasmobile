@@ -44,8 +44,8 @@ namespace Midas.VeiculoZ.Conversores
             abastecimento.Observacoes = dataReader.GetString(3);
             abastecimento.TanqueCheio = dataReader.GetBoolean(4);
             abastecimento.TipoCombustivel = (TipoCombustivel)Negocio.NegocioFactory.Instancia.TipoCombustivelNegocio.Obter(dataReader.GetInt32(5));
-            abastecimento.Valor = dataReader.GetDecimal(6);
-            abastecimento.ValorLitro = dataReader.GetDecimal(7);
+            abastecimento.Valor = (double)dataReader.GetDecimal(6);
+            abastecimento.ValorLitro = (double)dataReader.GetDecimal(7);
             return abastecimento;
         }
 

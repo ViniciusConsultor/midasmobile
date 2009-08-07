@@ -117,6 +117,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AlterarTabelaAbastecimento_CorrecaoValorLitro_Versao1_1" xml:space="preserve">
+    <value>alter table abastecimento alter column valorlitro money</value>
+  </data>
+  <data name="AlterarTabelaAbastecimento_CorrecaoValor_Versao1_1" xml:space="preserve">
+    <value>alter table abastecimento alter column valor money</value>
+  </data>
+  <data name="AlterarTabelaDespesa_CorrecaoValor_Versao1_1" xml:space="preserve">
+    <value>alter table despesa alter column valor money</value>
+  </data>
+  <data name="AlterarTabelaPercurso_CorrecaoConsumoMedio_Versao1_1" xml:space="preserve">
+    <value>alter table percurso alter column consumomedio float</value>
+  </data>
   <data name="AtualizarAbastecimento" xml:space="preserve">
     <value>update abastecimento set idposto=@idposto, data=@data, observacoes=@observacoes, tanquecheio=@tanquecheio, idtipoabastecimento=@idtipoabastecimento, valor=@valor, valorlitro=@valorlitro where id = @id</value>
   </data>
@@ -375,10 +387,27 @@ id=@id</value>
     <value>select * from veiculo where id = @id</value>
   </data>
   <data name="TabelaAbastecimento" xml:space="preserve">
-    <value>create table abastecimento (id int identity(1,1) not null primary key, idposto int references posto(id), data datetime, observacoes ntext, tanquecheio bit, idtipoabastecimento int references tipocombustivel(id), valor decimal, valorlitro decimal)</value>
+    <value>create table abastecimento  (
+	id int identity(1,1) not null primary key, 
+	idposto int references posto(id), 
+	data datetime, 
+	observacoes ntext, 
+	tanquecheio bit, 
+	idtipoabastecimento int references tipocombustivel(id), 
+	valor money, 
+	valorlitro money
+)</value>
   </data>
   <data name="TabelaDespesa" xml:space="preserve">
-    <value>create table despesa (id int identity(1,1) not null primary key, descricao nvarchar(255), data datetime, idempresa int, valor decimal, idtipo int references tipodespesa(id), idveiculo int references veiculo(id))</value>
+    <value>create table despesa (
+	id int identity(1,1) not null primary key, 
+	descricao nvarchar(255), 
+	data datetime, 
+	idempresa int, 
+	valor money, 
+	idtipo int references tipodespesa(id), 
+	idveiculo int references veiculo(id)
+)</value>
   </data>
   <data name="TabelaDistribuidora" xml:space="preserve">
     <value>create table distribuidora (id int identity(1,1) not null primary key, nome nvarchar(80))</value>
@@ -399,7 +428,16 @@ id=@id</value>
 )</value>
   </data>
   <data name="TabelaPercurso" xml:space="preserve">
-    <value>create table percurso (id int identity(1,1) not null primary key, odometroinicial bigint, odometrofinal bigint, idveiculo int references veiculo(id), viagem bit, idabastecimentoinicial int references abastecimento(id), idabastecimentofinal int references abastecimento(id),consumomedio decimal)</value>
+    <value>create table percurso (
+	id int identity(1,1) not null primary key, 
+	odometroinicial bigint, 
+	odometrofinal bigint, 
+	idveiculo int references veiculo(id), 
+	viagem bit, 
+	idabastecimentoinicial int references abastecimento(id), 
+	idabastecimentofinal int references abastecimento(id),
+	consumomedio float
+)</value>
   </data>
   <data name="TabelaPosto" xml:space="preserve">
     <value>create table posto (id int identity(1,1) not null primary key, iddistribuidora int references distribuidora(id),idpessoajuridica int, observacoes nvarchar(255))</value>
