@@ -1,0 +1,613 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0978CD7B-170A-4AC3-9748-E2384F3329E1}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Midas.VeiculoZ</RootNamespace>
+    <AssemblyName>Midas.VeiculoZ</AssemblyName>
+    <ProjectTypeGuids>{4D628B5B-2FBC-4AA6-8C16-197242AEB884};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PlatformFamilyName>PocketPC</PlatformFamilyName>
+    <PlatformID>b2c48bd2-963d-4549-9169-1fa021dce484</PlatformID>
+    <OSVersion>5.2</OSVersion>
+    <DeployDirSuffix>Midas.VeiculoZ</DeployDirSuffix>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <NativePlatformName>Windows Mobile 6 Professional SDK</NativePlatformName>
+    <FormFactorID>
+    </FormFactorID>
+    <ApplicationIcon>CabrioletRed.ico</ApplicationIcon>
+    <StartupObject>Midas.VeiculoZ.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;$(PlatformFamilyName)</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <FileAlignment>512</FileAlignment>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;$(PlatformFamilyName)</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <FileAlignment>512</FileAlignment>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Manco.Chart.CF, Version=5.0.0.0, Culture=neutral, PublicKeyToken=9b33d464ccc65bec, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files\Manco Software\Manco.Chart for .NET CF\Manco.Chart.CF.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsCE.Forms" />
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SqlServerCe, Version=3.5.0.0, Culture=neutral, PublicKeyToken=3be235df1c8d2ad3, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Ambiente.cs" />
+    <Compile Include="Conversores\AbastecimentoConversorDataReader.cs" />
+    <Compile Include="Conversores\AbastecimentoVisaoConversorDataReader.cs" />
+    <Compile Include="Conversores\ClassificacaoInfracaoConversorDataReader.cs" />
+    <Compile Include="Conversores\DespesaConversorDataReader.cs" />
+    <Compile Include="Conversores\DistribuidoraConversorDataReader.cs" />
+    <Compile Include="Conversores\InfracaoConversorDataReader.cs" />
+    <Compile Include="Conversores\InfracaoSimplesConversorDataReader.cs" />
+    <Compile Include="Conversores\ManutencaoConversorDataReader.cs" />
+    <Compile Include="Conversores\MultaConversorDataReader.cs" />
+    <Compile Include="Conversores\PercursoConversorDataReader.cs" />
+    <Compile Include="Conversores\PercursoVisaoConversorDataReader.cs" />
+    <Compile Include="Conversores\PostoConversorDataReader.cs" />
+    <Compile Include="Conversores\SituacaoMultaConversorDataReader.cs" />
+    <Compile Include="Conversores\TipoCombustivelConversorDataReader.cs" />
+    <Compile Include="Conversores\TipoDespesaConversorDataReader.cs" />
+    <Compile Include="Conversores\VeiculoConversorDataReader.cs" />
+    <Compile Include="Dados\IAbastecimentoDados.cs" />
+    <Compile Include="Dados\IDespesaDados.cs" />
+    <Compile Include="Dados\IInfracaoDados.cs" />
+    <Compile Include="Dados\IManutencaoDados.cs" />
+    <Compile Include="Dados\IMultaDados.cs" />
+    <Compile Include="Dados\IPercursoDados.cs" />
+    <Compile Include="Dados\SQLServer\AbastecimentoDados.cs" />
+    <Compile Include="Dados\SQLServer\ClassificacaoInfracaoDados.cs" />
+    <Compile Include="Dados\SQLServer\DespesaDados.cs" />
+    <Compile Include="Dados\SQLServer\DistribuidoraDados.cs" />
+    <Compile Include="Dados\SQLServer\InfracaoDados.cs" />
+    <Compile Include="Dados\SQLServer\ManutencaoDados.cs" />
+    <Compile Include="Dados\SQLServer\MultaDados.cs" />
+    <Compile Include="Dados\SQLServer\SituacaoMultaDados.cs" />
+    <Compile Include="Dados\XML\MotoristaDados.cs" />
+    <Compile Include="Dados\SQLServer\PercursoDados.cs" />
+    <Compile Include="Dados\SQLServer\PostoDados.cs" />
+    <Compile Include="Dados\SQLServer\TipoCombustivelDados.cs" />
+    <Compile Include="Dados\SQLServer\TipoDespesaDados.cs" />
+    <Compile Include="Dados\SQLServer\VeiculoDados.cs" />
+    <Compile Include="DTO\RelatorioGeralDTO.cs" />
+    <Compile Include="Forms\BuscaInfracoes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BuscaInfracoes.Designer.cs">
+      <DependentUpon>BuscaInfracoes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CadastroCidade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CadastroCidade.Designer.cs">
+      <DependentUpon>CadastroCidade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CadastroDespesa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CadastroDespesa.Designer.cs">
+      <DependentUpon>CadastroDespesa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CadastroEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CadastroEmpresa.Designer.cs">
+      <DependentUpon>CadastroEmpresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CadastroManutencao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CadastroManutencao.Designer.cs">
+      <DependentUpon>CadastroManutencao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CadastroMotorista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CadastroMotorista.Designer.cs">
+      <DependentUpon>CadastroMotorista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CadastroMulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CadastroMulta.Designer.cs">
+      <DependentUpon>CadastroMulta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CadastroTipoDespesa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CadastroTipoDespesa.Designer.cs">
+      <DependentUpon>CadastroTipoDespesa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CadastroTiposCombustivel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CadastroTiposCombustivel.Designer.cs">
+      <DependentUpon>CadastroTiposCombustivel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CadastroVeiculos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CadastroVeiculos.Designer.cs">
+      <DependentUpon>CadastroVeiculos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CadastroPostos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CadastroPostos.Designer.cs">
+      <DependentUpon>CadastroPostos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CadastroDistribuidoras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CadastroDistribuidoras.Designer.cs">
+      <DependentUpon>CadastroDistribuidoras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CadastroAbastecimento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CadastroAbastecimento.Designer.cs">
+      <DependentUpon>CadastroAbastecimento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ConstrutorMenu.cs" />
+    <Compile Include="Forms\FiltrosGraficoDespesas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FiltrosGraficoDespesas.Designer.cs">
+      <DependentUpon>FiltrosGraficoDespesas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\GraficoDespesas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\GraficoDespesas.Designer.cs">
+      <DependentUpon>GraficoDespesas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CRUDFormVeiculoZ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CRUDFormVeiculoZ.Designer.cs">
+      <DependentUpon>CRUDFormVeiculoZ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ListagemEmpresas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ListagemEmpresas.Designer.cs">
+      <DependentUpon>ListagemEmpresas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FiltrosGraficoConsumoMedio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FiltrosGraficoConsumoMedio.Designer.cs">
+      <DependentUpon>FiltrosGraficoConsumoMedio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\GraficoConsumoMedio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\GraficoConsumoMedio.Designer.cs">
+      <DependentUpon>GraficoConsumoMedio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ListagemAbastecimentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ListagemAbastecimentos.Designer.cs">
+      <DependentUpon>ListagemAbastecimentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ListagemDespesas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ListagemDespesas.Designer.cs">
+      <DependentUpon>ListagemDespesas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ListagemDistribuidoras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ListagemDistribuidoras.Designer.cs">
+      <DependentUpon>ListagemDistribuidoras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ListagemManutencoes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ListagemManutencoes.Designer.cs">
+      <DependentUpon>ListagemManutencoes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ListagemMultas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ListagemMultas.Designer.cs">
+      <DependentUpon>ListagemMultas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ListagemPostos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ListagemPostos.Designer.cs">
+      <DependentUpon>ListagemPostos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ListagemTiposDespesa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ListagemTiposDespesa.Designer.cs">
+      <DependentUpon>ListagemTiposDespesa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ListagemVeiculos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ListagemVeiculos.Designer.cs">
+      <DependentUpon>ListagemVeiculos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Inicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Inicio.Designer.cs">
+      <DependentUpon>Inicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ListagemTiposCombustivel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ListagemTiposCombustivel.Designer.cs">
+      <DependentUpon>ListagemTiposCombustivel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ListFormVeiculoZ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ListFormVeiculoZ.Designer.cs">
+      <DependentUpon>ListFormVeiculoZ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RelatorioConsumoMedio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RelatorioConsumoMedio.Designer.cs">
+      <DependentUpon>RelatorioConsumoMedio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RelatorioGeral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RelatorioGeral.Designer.cs">
+      <DependentUpon>RelatorioGeral.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Sobre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Sobre.Designer.cs">
+      <DependentUpon>Sobre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Negocio\AbastecimentoNegocio.cs" />
+    <Compile Include="Negocio\CargaVeiculoz.cs" />
+    <Compile Include="Negocio\ClassificacaoInfracaoNegocio.cs" />
+    <Compile Include="Negocio\DespesaNegocio.cs" />
+    <Compile Include="Negocio\DistribuidoraNegocio.cs" />
+    <Compile Include="Negocio\IDespesaNegocio.cs" />
+    <Compile Include="Negocio\IInfracaoNegocio.cs" />
+    <Compile Include="Negocio\IManutencaoNegocio.cs" />
+    <Compile Include="Negocio\IMultaNegocio.cs" />
+    <Compile Include="Negocio\InfracaoNegocio.cs" />
+    <Compile Include="Negocio\IPercursoNegocio.cs" />
+    <Compile Include="Negocio\ManutencaoNegocio.cs" />
+    <Compile Include="Negocio\MotoristaNegocio.cs" />
+    <Compile Include="Negocio\MultaNegocio.cs" />
+    <Compile Include="Negocio\NegocioFactory.cs" />
+    <Compile Include="Negocio\PercursoNegocio.cs" />
+    <Compile Include="Negocio\PostoNegocio.cs" />
+    <Compile Include="Negocio\SituacaoMultaNegocio.cs" />
+    <Compile Include="Negocio\TipoCombustivelNegocio.cs" />
+    <Compile Include="Negocio\TipoDespesaNegocio.cs" />
+    <Compile Include="Negocio\VeiculosNegocio.cs" />
+    <Compile Include="Objetos\Abastecimento.cs" />
+    <Compile Include="Objetos\Despesa.cs" />
+    <Compile Include="Objetos\Distribuidora.cs" />
+    <Compile Include="Objetos\Infracao.cs" />
+    <Compile Include="Objetos\Manutencao.cs" />
+    <Compile Include="Objetos\Motorista.cs" />
+    <Compile Include="Objetos\Multa.cs" />
+    <Compile Include="Objetos\Percurso.cs" />
+    <Compile Include="Objetos\Posto.cs" />
+    <Compile Include="Objetos\Seguro.cs" />
+    <Compile Include="Objetos\SituacaoMulta.cs" />
+    <Compile Include="Objetos\TipoCombustivel.cs" />
+    <Compile Include="Objetos\TipoDespesa.cs" />
+    <Compile Include="Objetos\ClassificacaoInfracao.cs" />
+    <Compile Include="Objetos\Veiculo.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\CadastroTiposCombustivel.resx">
+      <DependentUpon>CadastroTiposCombustivel.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CadastroVeiculos.resx">
+      <DependentUpon>CadastroVeiculos.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CadastroPostos.resx">
+      <DependentUpon>CadastroPostos.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CadastroDistribuidoras.resx">
+      <DependentUpon>CadastroDistribuidoras.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CadastroAbastecimento.resx">
+      <DependentUpon>CadastroAbastecimento.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FiltrosGraficoConsumoMedio.resx">
+      <DependentUpon>FiltrosGraficoConsumoMedio.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\GraficoConsumoMedio.resx">
+      <DependentUpon>GraficoConsumoMedio.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ListagemAbastecimentos.resx">
+      <DependentUpon>ListagemAbastecimentos.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ListagemDistribuidoras.resx">
+      <DependentUpon>ListagemDistribuidoras.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ListagemPostos.resx">
+      <DependentUpon>ListagemPostos.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ListagemVeiculos.resx">
+      <DependentUpon>ListagemVeiculos.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Inicio.resx">
+      <DependentUpon>Inicio.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ListagemTiposCombustivel.resx">
+      <DependentUpon>ListagemTiposCombustivel.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RelatorioConsumoMedio.resx">
+      <DependentUpon>RelatorioConsumoMedio.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Sobre.resx">
+      <DependentUpon>Sobre.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Recursos\ConstantesDados.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ConstantesDados.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Recursos\ConstantesDados.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ConstantesDados.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resolucao\CarregadorImagens.cs" />
+    <Compile Include="Validador\DespesaValidador.cs" />
+    <Compile Include="Validador\DistribuidoraValidador.cs" />
+    <Compile Include="Validador\ManutencaoValidador.cs" />
+    <Compile Include="Validador\MotoristaValidador.cs" />
+    <Compile Include="Validador\MultaValidador.cs" />
+    <Compile Include="Validador\PercursoValidador.cs" />
+    <Compile Include="Validador\PostoValidador.cs" />
+    <Compile Include="Validador\TipoCombustivelValidador.cs" />
+    <Compile Include="Validador\TipoDespesaValidador.cs" />
+    <Compile Include="Validador\VeiculoValidador.cs" />
+    <Compile Include="VeiculozFachada.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Midas.Nucleo\Midas.Nucleo.csproj">
+      <Project>{879F2AD8-7752-4105-B421-DF2B723A3233}</Project>
+      <Name>Midas.Nucleo</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Forms\CadastroCidade.resx">
+      <DependentUpon>CadastroCidade.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CadastroDespesa.resx">
+      <DependentUpon>CadastroDespesa.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CadastroEmpresa.resx">
+      <DependentUpon>CadastroEmpresa.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CadastroManutencao.resx">
+      <DependentUpon>CadastroManutencao.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CadastroTipoDespesa.resx">
+      <DependentUpon>CadastroTipoDespesa.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CRUDFormVeiculoZ.resx">
+      <DependentUpon>CRUDFormVeiculoZ.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ListagemEmpresas.resx">
+      <DependentUpon>ListagemEmpresas.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ListagemDespesas.resx">
+      <DependentUpon>ListagemDespesas.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ListagemManutencoes.resx">
+      <DependentUpon>ListagemManutencoes.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ListagemTiposDespesa.resx">
+      <DependentUpon>ListagemTiposDespesa.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ListFormVeiculoZ.resx">
+      <DependentUpon>ListFormVeiculoZ.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RelatorioGeral.resx">
+      <DependentUpon>RelatorioGeral.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="License\Manco.Chart.CF.lic" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CabrioletRed.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Imagens\240x320\IconeEditar.png" />
+    <EmbeddedResource Include="Imagens\240x320\IconeExcluir.png" />
+    <EmbeddedResource Include="Imagens\240x320\IconeSalvar.png" />
+    <EmbeddedResource Include="Imagens\240x320\IconeVoltar.png" />
+    <EmbeddedResource Include="Imagens\240x320\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Imagens\480x640\IconeEditar.png" />
+    <EmbeddedResource Include="Imagens\480x640\IconeEnfeite.png" />
+    <EmbeddedResource Include="Imagens\480x640\IconeExcluir.png" />
+    <EmbeddedResource Include="Imagens\480x640\IconeSalvar.png" />
+    <EmbeddedResource Include="Imagens\480x640\IconeVoltar.png" />
+    <EmbeddedResource Include="Imagens\480x640\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Imagens\BackgroundMenu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Imagens\480x800\IconeEditar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Imagens\480x800\IconeEnfeite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Imagens\480x800\IconeExcluir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Imagens\480x800\IconeSalvar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Imagens\480x800\IconeVoltar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Imagens\480x800\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Imagens\480x800\MenuIconeAbastecimentos.png" />
+    <EmbeddedResource Include="Imagens\480x800\MenuIconeDespesas.png" />
+    <EmbeddedResource Include="Imagens\480x800\MenuIconeManutencoes.png" />
+    <EmbeddedResource Include="Imagens\480x800\MenuIconePostos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Imagens\480x640\MenuIconeAbastecimentos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Imagens\480x640\MenuIconeDespesas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Imagens\480x640\MenuIconeManutencoes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Imagens\480x640\MenuIconePostos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Imagens\240x320\MenuIconeAbastecimentos.png" />
+    <EmbeddedResource Include="Imagens\240x320\MenuIconeDespesas.png" />
+    <EmbeddedResource Include="Imagens\240x320\MenuIconeManutencoes.png" />
+    <EmbeddedResource Include="Imagens\240x320\MenuIconePostos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Imagens\480x640\Calculadora.png" />
+    <EmbeddedResource Include="Imagens\480x640\IconeAdicionar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Imagens\240x320\Calculadora.png" />
+    <EmbeddedResource Include="Imagens\240x320\IconeAdicionar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Forms\BuscaInfracoes.resx">
+      <DependentUpon>BuscaInfracoes.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CadastroMotorista.resx">
+      <DependentUpon>CadastroMotorista.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CadastroMulta.resx">
+      <DependentUpon>CadastroMulta.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FiltrosGraficoDespesas.resx">
+      <DependentUpon>FiltrosGraficoDespesas.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\GraficoDespesas.resx">
+      <DependentUpon>GraficoDespesas.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ListagemMultas.resx">
+      <DependentUpon>ListagemMultas.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imagens\480x800\Calculadora.png" />
+    <EmbeddedResource Include="Imagens\480x800\IconeAdicionar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Midas.VeiculoZ.Infracoes.sdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CompactFramework.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}">
+        <HostingProcess disable="1" />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
