@@ -44,7 +44,7 @@ namespace Midas.VeiculoZ.Objetos
         /// <summary>
         /// Data que a carteira deve ser renovada.
         /// </summary>
-        private DateTime dataRenovacao = DateTime.Now;
+        private DateTime dataRenovacao;
         public DateTime DataRenovacao
         {
             get { return dataRenovacao; }

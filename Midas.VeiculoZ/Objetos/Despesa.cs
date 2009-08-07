@@ -47,8 +47,8 @@ namespace Midas.VeiculoZ.Objetos
             set { empresa = value; }
         }
 
-        private decimal valor;
-        public decimal Valor
+        private double valor;
+        public double Valor
         {
             get { return valor; }
             set { valor = value; }

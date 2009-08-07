@@ -66,7 +66,7 @@ namespace Midas.VeiculoZ.Forms
                 existe = false;
             }
             Motorista motorista = VeiculozFachada.Instancia.ObterMotorista();
-            if (motorista.DataRenovacao <= DateTime.Now)
+            if (motorista.DataRenovacao != null && motorista.DataRenovacao.Year != 0001 && motorista.DataRenovacao <= DateTime.Now)
             {
                 MessageBox.Show("Sua carteira de Motorista está vencida! Data da renovação: " + motorista.DataRenovacao.ToString("dd/MM/yyyy") + ".", "Alerta");
             }

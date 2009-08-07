@@ -102,7 +102,7 @@ namespace Midas.VeiculoZ.Negocio
         public override void Excluir(long id)
         {
             Percurso percurso = (Percurso)this.Obter(id);
-            if (percurso.AbastecimentoFinal != null)
+            if (percurso.AbastecimentoInicial != null)
             {
                 IList percursos = this.ObterPercursosPorAbastecimentoFinal(percurso.AbastecimentoInicial.Id);
                 for (int i = 0; i < percursos.Count; i++)

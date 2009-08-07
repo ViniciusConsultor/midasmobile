@@ -72,7 +72,7 @@ namespace Midas.VeiculoZ.Objetos
             }
         }
 
-        public decimal LitrosConsumidos
+        public double LitrosConsumidos
         {
             get
             {

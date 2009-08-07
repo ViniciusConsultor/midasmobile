@@ -104,7 +104,7 @@ namespace Midas.VeiculoZ.Forms
             {
                 try
                 {
-                    abastecimento.Valor = decimal.Parse(tValor.Text);
+                    abastecimento.Valor = double.Parse(tValor.Text);
                 }
                 catch (Exception e)
                 {
@@ -115,7 +115,7 @@ namespace Midas.VeiculoZ.Forms
             {
                 try
                 {
-                    abastecimento.ValorLitro = decimal.Parse(tValorLitro.Text);
+                    abastecimento.ValorLitro = double.Parse(tValorLitro.Text);
                 }
                 catch (Exception e)
                 {
@@ -131,7 +131,10 @@ namespace Midas.VeiculoZ.Forms
             {
                 percurso.OdometroFim = long.Parse(tKmFinal.Text);
             }
-            percurso.OdometroInicio = long.Parse(tKmInicial.Text);
+            if (tKmInicial.Text != "")
+            {
+                percurso.OdometroInicio = long.Parse(tKmInicial.Text);
+            }
             percurso.Veiculo = (Veiculo)cmbVeiculos.SelectedItem;
             percurso.Viagem = chkViagem.Checked;
             return percurso;

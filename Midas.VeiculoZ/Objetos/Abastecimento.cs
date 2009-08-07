@@ -31,7 +31,7 @@ namespace Midas.VeiculoZ.Objetos
     public class Abastecimento:ObjetoNegocio
     {
 
-        public decimal Litros
+        public double Litros
         {
             get
             {
@@ -79,8 +79,8 @@ namespace Midas.VeiculoZ.Objetos
         /// <summary>
         /// Valor total pago pelo abastecimento.
         /// </summary>
-        private Decimal valor;
-        public Decimal Valor
+        private double valor;
+        public double Valor
         {
             get { return valor; }
             set { valor = value; }
@@ -89,8 +89,8 @@ namespace Midas.VeiculoZ.Objetos
         /// <summary>
         /// Valor que foi pago pelo litro do combustível.
         /// </summary>
-        private Decimal valorLitro;
-        public Decimal ValorLitro
+        private double valorLitro;
+        public double ValorLitro
         {
             get { return valorLitro; }
             set { valorLitro = value; }

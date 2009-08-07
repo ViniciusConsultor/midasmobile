@@ -47,7 +47,7 @@ namespace Midas.VeiculoZ.Forms
             Motorista motorista = VeiculozFachada.Instancia.ObterMotorista();
             tNome.Text = motorista.Nome;
             tNumero.Text = motorista.NumeroCarteira;
-            if (motorista.DataRenovacao != null)
+            if (motorista.DataRenovacao != null && motorista.DataRenovacao.Year > 1)
             {
                 dataRenovacao.Value = motorista.DataRenovacao;
             }

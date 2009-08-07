@@ -47,6 +47,7 @@
             this.cmbVeiculos.Size = new System.Drawing.Size(282, 41);
             this.cmbVeiculos.TabIndex = 16;
             this.cmbVeiculos.ValueMember = "Id";
+            this.cmbVeiculos.SelectedValueChanged += new System.EventHandler(this.cmbVeiculos_SelectedValueChanged);
             // 
             // label2
             // 

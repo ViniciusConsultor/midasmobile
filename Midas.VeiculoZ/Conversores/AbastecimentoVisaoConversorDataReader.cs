@@ -40,8 +40,8 @@ namespace Midas.VeiculoZ.Conversores
             Abastecimento abastecimento = new Abastecimento();
             abastecimento.Id = dataReader.GetInt32(0);
             abastecimento.Data = dataReader.GetDateTime(2);
-            abastecimento.Valor = dataReader.GetDecimal(6);
-            abastecimento.ValorLitro = dataReader.GetDecimal(7);
+            abastecimento.Valor = (double)dataReader.GetDecimal(6);
+            abastecimento.ValorLitro = (double)dataReader.GetDecimal(7);
             return abastecimento;
         }
 

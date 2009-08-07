@@ -39,7 +39,7 @@ namespace Midas.VeiculoZ.Conversores
             despesa.Descricao = dataReader.GetString(1);
             despesa.Data = dataReader.GetDateTime(2);
             despesa.Empresa = (PessoaJuridica) Nucleo.Negocio.NegocioFactory.Instancia.PessoaJuridicaNegocio.Obter(dataReader.GetInt32(3));
-            despesa.Valor = dataReader.GetDecimal(4);
+            despesa.Valor = (double)dataReader.GetDecimal(4);
             despesa.Tipo = (TipoDespesa)Negocio.NegocioFactory.Instancia.TipoDespesaNegocio.Obter(dataReader.GetInt32(5));
             despesa.Veiculo = (Veiculo)Negocio.NegocioFactory.Instancia.VeiculoNegocio.Obter(dataReader.GetInt32(6));
             return despesa;

@@ -75,11 +75,11 @@
             // 
             // tDescricao
             // 
-            this.tDescricao.Location = new System.Drawing.Point(3, 438);
+            this.tDescricao.Location = new System.Drawing.Point(3, 447);
             this.tDescricao.Multiline = true;
             this.tDescricao.Name = "tDescricao";
             this.tDescricao.ReadOnly = true;
-            this.tDescricao.Size = new System.Drawing.Size(477, 90);
+            this.tDescricao.Size = new System.Drawing.Size(477, 84);
             this.tDescricao.TabIndex = 10;
             // 
             // BuscaInfracoes

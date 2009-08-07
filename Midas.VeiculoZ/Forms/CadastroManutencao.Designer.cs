@@ -67,18 +67,18 @@ namespace Midas.VeiculoZ.Forms
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(8, 326);
+            this.label2.Location = new System.Drawing.Point(15, 326);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(126, 30);
+            this.label2.Size = new System.Drawing.Size(123, 30);
             this.label2.Text = "Descrição:";
             // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(92, 228);
+            this.label1.Location = new System.Drawing.Point(94, 228);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 42);
-            this.label1.Text = "ID:";
+            this.label1.Size = new System.Drawing.Size(40, 30);
+            this.label1.Text = "Id:";
             // 
             // tId
             // 
@@ -119,7 +119,7 @@ namespace Midas.VeiculoZ.Forms
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(22, 376);
+            this.label5.Location = new System.Drawing.Point(26, 371);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(108, 26);
             this.label5.Text = "Lembrar:";
@@ -137,9 +137,9 @@ namespace Midas.VeiculoZ.Forms
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(78, 424);
+            this.label3.Location = new System.Drawing.Point(82, 418);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 30);
+            this.label3.Size = new System.Drawing.Size(52, 27);
             this.label3.Text = "Km:";
             // 
             // tKm
@@ -163,9 +163,9 @@ namespace Midas.VeiculoZ.Forms
             // label10
             // 
             this.label10.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
-            this.label10.Location = new System.Drawing.Point(22, 276);
+            this.label10.Location = new System.Drawing.Point(38, 276);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(110, 42);
+            this.label10.Size = new System.Drawing.Size(96, 30);
             this.label10.Text = "Veículo:";
             this.label10.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
