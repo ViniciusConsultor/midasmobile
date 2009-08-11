@@ -204,6 +204,13 @@ namespace Midas.VeiculoZ.Negocio
             return dto;
         }
 
+        public double ObterGastoTotalPorVeiculoPeriodo(long id, DateTime d1, DateTime d2)
+        {
+            PercursoDados dados = (PercursoDados)this.AcessoDados;
+            return dados.ObterGastoTotalPorVeiculoPeriodo(id, d1, d2);
+        }
+
+
         #endregion
     }
 

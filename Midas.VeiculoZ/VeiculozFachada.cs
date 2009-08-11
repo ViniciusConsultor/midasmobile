@@ -257,6 +257,11 @@ namespace Midas.VeiculoZ
             return (Infracao)Negocio.NegocioFactory.Instancia.InfracaoNegocio.Obter(id);
         }
 
+        public IList ListarRelatorioDespesasPorVeiculoPeriodo(long idveiculo, DateTime data1, DateTime data2)
+        {
+            return Negocio.NegocioFactory.Instancia.DespesaNegocio.ListarRelatorioDespesasPorVeiculoPeriodo(idveiculo, data1, data2);
+        }
+
         #endregion
     }
 

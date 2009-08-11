@@ -34,6 +34,7 @@ namespace Midas.VeiculoZ.Negocio
         IList ObterPercursosPorAbastecimentoFinal(long id);
         IList ListarPercursos(long idVeiculo, long idTipoAbastecimento, long idPosto, DateTime data1, DateTime data2, bool viagem);
         RelatorioGeralDTO ObterRelatorioGeral(long id);
+        double ObterGastoTotalPorVeiculoPeriodo(long id, DateTime d1, DateTime d2);
     }
 
 }

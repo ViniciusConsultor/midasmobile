@@ -21,6 +21,9 @@ using System.Collections.Generic;
 using System.Text;
 using Midas.Nucleo.Negocio;
 using Midas.VeiculoZ.Dados.SQLServer;
+using System.Collections;
+using Midas.VeiculoZ.DTO;
+using Midas.VeiculoZ.Objetos;
 
 namespace Midas.VeiculoZ.Negocio
 {
@@ -37,6 +40,38 @@ namespace Midas.VeiculoZ.Negocio
         {
             DespesaDados despesaDados = (DespesaDados)this.AcessoDados;
             return despesaDados.ListarPorVeiculo(id);
+        }
+
+        public IList ListarRelatorioDespesasPorVeiculoPeriodo(long idveiculo, DateTime data1, DateTime data2)
+        {
+            IList lista = new ArrayList();
+            RelatorioDespesasDTO rd1 = new RelatorioDespesasDTO();
+            rd1.Valor = Negocio.NegocioFactory.Instancia.MultaNegocio.ObterGastoTotalPorPeriodoVeiculo(idveiculo, data1, data2);
+            rd1.TipoDespesa = "Multas";
+            lista.Add(rd1);
+
+            RelatorioDespesasDTO rd2 = new RelatorioDespesasDTO();
+            rd2.Valor = NegocioFactory.Instancia.PercursoNegocio.ObterGastoTotalPorVeiculoPeriodo(idveiculo, data1, data2);
+            rd2.TipoDespesa = "Abastecimentos";
+            lista.Add(rd2);
+
+            DespesaDados despesaDados = (DespesaDados)this.AcessoDados;
+            IList tiposDespesa = NegocioFactory.Instancia.TipoDespesaNegocio.Listar();
+            for (int i = 0; i < tiposDespesa.Count; i++)
+            {
+                TipoDespesa tipoDespesa = (TipoDespesa)tiposDespesa[i];
+                IList despesas = despesaDados.ListarPorVeiculoTipoPeriodo(idveiculo, tipoDespesa.Id, data1, data2);
+                RelatorioDespesasDTO rd = new RelatorioDespesasDTO();
+                rd.Valor = 0;
+                rd.TipoDespesa = tipoDespesa.Nome;
+                for (int j = 0; j < despesas.Count; j++)
+                {
+                    Despesa despesa = (Despesa)despesas[j];
+                    rd.Valor += despesa.Valor;
+                }
+                lista.Add(rd);
+            }
+            return lista;
         }
 
         #endregion

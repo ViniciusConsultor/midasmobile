@@ -96,6 +96,17 @@ namespace Midas.VeiculoZ.Dados.SQLServer
             return lista;
         }
 
+        public IList ListarPorVeiculoTipoPeriodo(long idveiculo, long idtipo, DateTime data1, DateTime data2)
+        {
+            Comando comando = new Comando(Recursos.ConstantesDados.SelecionarDespesasPorVeiculoTipoPeriodo, Midas.Nucleo.Recursos.ConstantesGerais.BancoVeiculoZ);
+            comando.AdicionarParametro("@idveiculo", idveiculo);
+            comando.AdicionarParametro("@idtipo", idtipo);
+            comando.AdicionarParametro("@data1", data1);
+            comando.AdicionarParametro("@data2", data2);
+            IList lista = comando.ExecutarQuery(new Midas.VeiculoZ.Conversores.DespesaConversorDataReader());
+            return lista;
+        }
+
         #endregion
     }
 }

@@ -27,12 +27,14 @@ using Midas.VeiculoZ.Dados;
 
 namespace Midas.VeiculoZ.Negocio
 {
-    public class AbastecimentoNegocio:NegocioGenerico
+    public class AbastecimentoNegocio:NegocioGenerico, IAbastecimentoNegocio
     {
         public AbastecimentoNegocio()
         {
             this.AcessoDados = new Dados.SQLServer.AbastecimentoDados();
         }
+
+        #region IAbastecimentoNegocio Members
 
         public Abastecimento ObterSimplificado(long id)
         {
@@ -40,5 +42,6 @@ namespace Midas.VeiculoZ.Negocio
             return dados.ObterSimplificado(id);
         }
 
+        #endregion
     }
 }

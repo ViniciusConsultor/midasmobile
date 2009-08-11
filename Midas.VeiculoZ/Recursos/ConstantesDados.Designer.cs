@@ -493,11 +493,38 @@ namespace Midas.VeiculoZ.Recursos {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to select * from despesa where data &gt;= @data1 and data &lt;= @data2 and idveiculo=@idveiculo and idtipo=@idtipo.
+        /// </summary>
+        internal static string SelecionarDespesasPorVeiculoTipoPeriodo {
+            get {
+                return ResourceManager.GetString("SelecionarDespesasPorVeiculoTipoPeriodo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to select * from distribuidora where id = @id.
         /// </summary>
         internal static string SelecionarDistribuidora {
             get {
                 return ResourceManager.GetString("SelecionarDistribuidora", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to select sum(valor) as total from abastecimento where id in (select idabastecimentoinicial from percurso where idveiculo = @idveiculo and data &gt;= @data1 and data &lt;= @data2).
+        /// </summary>
+        internal static string SelecionarGastoTotalAbastecimentosPorVeiculoPeriodo {
+            get {
+                return ResourceManager.GetString("SelecionarGastoTotalAbastecimentosPorVeiculoPeriodo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to select sum(valor) from multa where id in (@infracoes).
+        /// </summary>
+        internal static string SelecionarGastoTotalMultasPorIDs {
+            get {
+                return ResourceManager.GetString("SelecionarGastoTotalMultasPorIDs", resourceCulture);
             }
         }
         
@@ -516,6 +543,15 @@ namespace Midas.VeiculoZ.Recursos {
         internal static string SelecionarIdAbastecimentoFinalPercurso {
             get {
                 return ResourceManager.GetString("SelecionarIdAbastecimentoFinalPercurso", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to select idinfracao from multa where idveiculo=@idveiculo and data &gt;= @data1 and data &lt;= @data2.
+        /// </summary>
+        internal static string SelecionarIdentificadorInfracoesPorPeriodoVeiculo {
+            get {
+                return ResourceManager.GetString("SelecionarIdentificadorInfracoesPorPeriodoVeiculo", resourceCulture);
             }
         }
         

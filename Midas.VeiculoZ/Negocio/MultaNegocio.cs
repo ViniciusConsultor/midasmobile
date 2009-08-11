@@ -40,6 +40,19 @@ namespace Midas.VeiculoZ.Negocio
             return multaDados.ListarMultasPorVeiculo(id);
         }
 
+        public double ObterGastoTotalPorPeriodoVeiculo(long id, DateTime d1, DateTime d2)
+        {
+            MultaDados multaDados = (MultaDados)this.AcessoDados;
+            long[] ids = multaDados.ListarIDInfracoesPorVeiculoPeriodo(id, d1, d2);
+            if (ids.Length > 0)
+            {
+                double total = Negocio.NegocioFactory.Instancia.InfracaoNegocio.ObterGastoTotalInfracoesPorIDs(ids);
+                return total;
+            }
+            return 0;
+        }
+
         #endregion
     }
+
 }

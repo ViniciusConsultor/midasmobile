@@ -47,7 +47,7 @@ namespace Midas.VeiculoZ.Forms
             miRelatorios_GraficoConsumoMedio.Text = "Gráfico Consumo Médio";
             miRelatorios_GraficoDespesas.Text = "Gráfico Despesas";
             miRelatorios.MenuItems.Add(miRelatorios_GraficoConsumoMedio);
-            //miRelatorios.MenuItems.Add(miRelatorios_GraficoDespesas);
+            miRelatorios.MenuItems.Add(miRelatorios_GraficoDespesas);
             miRelatorios.MenuItems.Add(miRelatorios_RelatorioConsumoMedio);
             miRelatorios.MenuItems.Add(miRelatorios_RelatorioGeral);
             miRelatorios_GraficoConsumoMedio.Click += new System.EventHandler(miRelatorios_GraficoConsumoMedio_Click);

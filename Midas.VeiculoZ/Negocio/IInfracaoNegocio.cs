@@ -9,5 +9,6 @@ namespace Midas.VeiculoZ.Negocio
     public interface IInfracaoNegocio
     {
         IList ListarInfracoesPorClassificacaoDescricao(long id, string descricao);
+        double ObterGastoTotalInfracoesPorIDs(long[] ids);
     }
 }

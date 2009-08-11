@@ -40,6 +40,12 @@ namespace Midas.VeiculoZ.Negocio
             return dados.ListarInfracoesPorClassificacaoDescricao(id, descricao);
         }
 
+        public double ObterGastoTotalInfracoesPorIDs(long[] ids)
+        {
+            InfracaoDados dados = (InfracaoDados)this.AcessoDados;
+            return dados.ObterValorTotalPorIDs(ids);
+        }
+
         #endregion
     }
 }

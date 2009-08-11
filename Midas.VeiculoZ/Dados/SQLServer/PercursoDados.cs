@@ -226,6 +226,21 @@ namespace Midas.VeiculoZ.Dados.SQLServer
             return 0;
         }
 
+        public double ObterGastoTotalPorVeiculoPeriodo(long id, DateTime data1, DateTime data2)
+        {
+            Comando comando = new Comando(Recursos.ConstantesDados.SelecionarGastoTotalAbastecimentosPorVeiculoPeriodo, Midas.Nucleo.Recursos.ConstantesGerais.BancoVeiculoZ);
+            comando.AdicionarParametro("@idveiculo", id);
+            comando.AdicionarParametro("@data1", data1);
+            comando.AdicionarParametro("@data2", data2);
+            object o = comando.ObterValorEscalar();
+            if (o != DBNull.Value)
+            {
+                decimal d = (decimal)o;
+                return (double)d;
+            }
+            return 0;
+        }
+
         #endregion
     }
 }
