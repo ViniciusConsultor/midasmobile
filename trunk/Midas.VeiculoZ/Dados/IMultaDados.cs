@@ -10,5 +10,6 @@ namespace Midas.VeiculoZ.Dados
     public interface IMultaDados:IAcessoDados
     {
         IList ListarMultasPorVeiculo(long id);
+        long[] ListarIDInfracoesPorVeiculoPeriodo(long id, DateTime d1, DateTime d2);
     }
 }

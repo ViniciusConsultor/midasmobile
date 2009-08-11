@@ -91,6 +91,21 @@ namespace Midas.VeiculoZ.Dados.SQLServer
             return lista;
         }
 
+        public double ObterValorTotalPorIDs(long[] ids)
+        {
+            string sql = "select sum(valor) from infracao where id IN (";
+            for (int i = 0; i < ids.Length; i++)
+            {
+                sql += ids[i] + ",";
+            }
+            sql += "0)";
+            Comando comando = new Comando(sql, Midas.Nucleo.Recursos.ConstantesGerais.BancoInfracoes);
+            object o = comando.ObterValorEscalar();
+            if (o != DBNull.Value)
+                return (double)o;
+            return 0;
+        }
+
         #endregion
     }
 }

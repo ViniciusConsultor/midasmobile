@@ -264,14 +264,26 @@ id=@id</value>
   <data name="SelecionarDespesasPorVeiculo" xml:space="preserve">
     <value>select * from despesa where idveiculo=@idveiculo order by data desc</value>
   </data>
+  <data name="SelecionarDespesasPorVeiculoTipoPeriodo" xml:space="preserve">
+    <value>select * from despesa where data &gt;= @data1 and data &lt;= @data2 and idveiculo=@idveiculo and idtipo=@idtipo</value>
+  </data>
   <data name="SelecionarDistribuidora" xml:space="preserve">
     <value>select * from distribuidora where id = @id</value>
+  </data>
+  <data name="SelecionarGastoTotalAbastecimentosPorVeiculoPeriodo" xml:space="preserve">
+    <value>select sum(valor) as total from abastecimento where id in (select idabastecimentoinicial from percurso where idveiculo = @idveiculo and data &gt;= @data1 and data &lt;= @data2)</value>
+  </data>
+  <data name="SelecionarGastoTotalMultasPorIDs" xml:space="preserve">
+    <value>select sum(valor) from multa where id in (@infracoes)</value>
   </data>
   <data name="SelecionarGastoTotalPorVeiculo" xml:space="preserve">
     <value>select sum(valor) as total from abastecimento where id in (select idabastecimentoinicial from percurso where idveiculo = @idveiculo)</value>
   </data>
   <data name="SelecionarIdAbastecimentoFinalPercurso" xml:space="preserve">
     <value>select idabastecimentofinal from percurso where id = @id</value>
+  </data>
+  <data name="SelecionarIdentificadorInfracoesPorPeriodoVeiculo" xml:space="preserve">
+    <value>select idinfracao from multa where idveiculo=@idveiculo and data &gt;= @data1 and data &lt;= @data2</value>
   </data>
   <data name="SelecionarInfracao" xml:space="preserve">
     <value>select * from infracao where id = @id</value>

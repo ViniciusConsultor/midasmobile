@@ -26,5 +26,6 @@ namespace Midas.VeiculoZ.Negocio
     public interface IDespesaNegocio
     {
         IList ListarPorVeiculo(long id);
+        IList ListarRelatorioDespesasPorVeiculoPeriodo(long idveiculo, DateTime data1, DateTime data2);
     }
 }

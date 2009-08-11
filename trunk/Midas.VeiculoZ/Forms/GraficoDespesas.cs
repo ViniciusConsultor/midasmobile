@@ -51,10 +51,6 @@ namespace Midas.VeiculoZ.Forms
             CarregadorImagens.ObterImagemCompativel("Logo", pLogo);
         }
 
-		private void ChartFromArrayExample_Load(object sender, EventArgs e)
-		{
-		}
-
         private void Carregar()
         {
             this.m_ChartControl.Charts.Clear();
@@ -110,15 +106,12 @@ namespace Midas.VeiculoZ.Forms
 		/// <returns></returns>
         private ArrayDataSource GenareteData()
         {
-            IList percursos = GerenciadorDados.Instancia.GetLista();
-            double[,] loDataArray = new double[percursos.Count-1, 1];
-            for (int j = 0; j < percursos.Count; j++)
+            IList despesas = GerenciadorDados.Instancia.GetLista();
+            double[,] loDataArray = new double[1, despesas.Count];
+            for (int j = 0; j < despesas.Count; j++)
             {
-                Percurso percurso = (Percurso)percursos[j];
-                if (percurso.ConsumoMedio > 0)
-                {
-                    loDataArray[j, 0] = percurso.ConsumoMedio;
-                }
+                DTO.RelatorioDespesasDTO dto = (DTO.RelatorioDespesasDTO) despesas[j];
+                loDataArray[0,j] = dto.Valor;
             }
             return new ArrayDataSource(loDataArray, DataOrientation.CategoryInRow);
         }
@@ -144,8 +137,8 @@ namespace Midas.VeiculoZ.Forms
             {
                 m_ChartControl.Charts.ControlLayout.Titles.Distance = 5;
                 FormattedData title = m_ChartControl.Charts.ControlLayout.Titles.CreateTitle();
-                title.Data = "Gráfico de Consumo Médio";
-                title.Font.Size = 12;
+                title.Data = "Gráfico de Despesas";
+                title.Font.Size = 9;
                 title.Font.Bold = true;
                 title.Color = Color.Transparent;
                 title.BorderColor = Color.Transparent;
@@ -207,8 +200,8 @@ namespace Midas.VeiculoZ.Forms
 		private void CreateValueAxis()
 		{
 			ValueAxis axis = m_oChart.ValueAxisList.CreateValueAxis();
-			axis.Title.Data = "Consumo";
-			axis.Title.Font.Size = 14;
+			axis.Title.Data = "Despesas";
+			axis.Title.Font.Size = 9;
 			axis.Title.Foreground = Color.Black;
 			axis.Title.Font.Bold = true;
 			axis.Title.Alignment = TextAlignment.Center;
@@ -242,6 +235,7 @@ namespace Midas.VeiculoZ.Forms
             m_oChart.Element.Label.Rotation = 0;
             m_oChart.Element.Label.Foreground = Color.Black;
             m_oChart.Element.Gap = 0;
+            m_oChart.Element.Label.Font.Size = 9;
 		}
 
 		/// <summary>
@@ -249,17 +243,24 @@ namespace Midas.VeiculoZ.Forms
 		/// </summary>
 		private void ConfigureSeriesList()
 		{
+            m_oChart.SeriesList.Title.Alignment = TextAlignment.Left;
 			m_oChart.SeriesList.Title.Foreground = Color.Transparent;
+            m_oChart.SeriesList.Title.Font.Size = 7;
+            m_oChart.SeriesList.Title.Font.Bold = false;
             m_oChart.SeriesList.Title.BorderColor = Color.Transparent;
-            m_oChart.SeriesList[0].Fill.Color = Color.Blue;
-            m_oChart.SeriesList[0].Title = "Consumo Médio";
-            m_oChart.SeriesList[0].Shape = ShapeType.Pie;
+            IList despesas = GerenciadorDados.Instancia.GetLista();
+            Random random = new Random();
  			for (int i = 0; i < m_oChart.SeriesList.Count; i++)
 			{
+                DTO.RelatorioDespesasDTO dto = (DTO.RelatorioDespesasDTO)despesas[i];
+                m_oChart.SeriesList[i].Title = dto.TipoDespesa;
+                m_oChart.SeriesList[i].Fill.Color = Color.FromArgb(random.Next(1,255),random.Next(1,255),random.Next(1,255));
 				m_oChart.SeriesList[i].Fill.BorderColor = Color.Black;
 				m_oChart.SeriesList[i].Fill.BorderWidth = 1;
+                m_oChart.SeriesList[i].Shape = ShapeType.Rectangle;
 			}   
 		}
+
 	}
  
 }

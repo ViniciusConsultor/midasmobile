@@ -86,7 +86,6 @@ namespace Midas.VeiculoZ.Forms
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.m_ChartControl);
             this.Name = "GraficoConsumoMedio";
-            this.Load += new System.EventHandler(this.ChartFromArrayExample_Load);
             this.ResumeLayout(false);
 
         }

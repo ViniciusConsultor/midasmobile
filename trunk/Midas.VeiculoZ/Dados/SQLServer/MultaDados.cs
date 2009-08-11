@@ -24,6 +24,7 @@ using Midas.Nucleo.Dados;
 using Midas.VeiculoZ.Objetos;
 using Midas.Nucleo.Dados.SQLServerCE;
 using System.Collections;
+using System.Data.SqlServerCe;
 
 namespace Midas.VeiculoZ.Dados.SQLServer
 {
@@ -93,6 +94,28 @@ namespace Midas.VeiculoZ.Dados.SQLServer
             comando.AdicionarParametro("@idveiculo", id);
             IList lista = comando.ExecutarQuery(new Midas.VeiculoZ.Conversores.MultaConversorDataReader());
             return lista;            
+        }
+
+        public long[] ListarIDInfracoesPorVeiculoPeriodo(long id, DateTime d1, DateTime d2)
+        {
+            Comando comando = new Comando(Recursos.ConstantesDados.SelecionarIdentificadorInfracoesPorPeriodoVeiculo, Midas.Nucleo.Recursos.ConstantesGerais.BancoVeiculoZ);
+            comando.AdicionarParametro("@idveiculo", id);
+            comando.AdicionarParametro("@data1", d1);
+            comando.AdicionarParametro("@data2", d2);
+            SqlCeDataReader dataReader = comando.ExecutarQuery();
+            IList listaArmengue = new ArrayList();
+            while (dataReader.Read())
+            {
+                listaArmengue.Add(dataReader.GetInt32(0));
+            }
+
+            long[] re = new long[listaArmengue.Count];
+            for (int i = 0; i < listaArmengue.Count; i++)
+            {
+                int v = (int)listaArmengue[i];
+                re[i] = (long)v;
+            }
+            return re;
         }
 
         #endregion

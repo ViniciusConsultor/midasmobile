@@ -48,6 +48,20 @@ namespace Midas.VeiculoZ.Forms
 
         private void btnGerar_Click(object sender, EventArgs e)
         {
+            Veiculo veiculo = (Veiculo)cmbVeiculo.SelectedItem;
+            DateTime d1 = this.data1.Value;
+            DateTime d2 = this.data2.Value;
+            IList lista = VeiculozFachada.Instancia.ListarRelatorioDespesasPorVeiculoPeriodo(veiculo.Id, d1, d2);
+            if (lista.Count > 0)
+            {
+                GerenciadorDados.Instancia.SetLista(lista);
+                Program.FormStack.Push(typeof(GraficoDespesas));
+            }
+            else
+            {
+                MessageBox.Show("Não há dados a serem exibidos.", "Informação");
+            }
+
         }
 
     }

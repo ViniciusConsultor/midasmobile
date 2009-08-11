@@ -9,5 +9,6 @@ namespace Midas.VeiculoZ.Negocio
     public interface IMultaNegocio
     {
         IList ListarMultasPorVeiculo(long id);
+        double ObterGastoTotalPorPeriodoVeiculo(long id, DateTime d1, DateTime d2);
     }
 }

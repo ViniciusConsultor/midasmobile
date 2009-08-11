@@ -28,5 +28,6 @@ namespace Midas.VeiculoZ.Dados
     public interface IDespesaDados:IAcessoDados
     {
         IList ListarPorVeiculo(long id);
+        IList ListarPorVeiculoTipoPeriodo(long idveiculo, long idtipo, DateTime data1, DateTime data2);
     }
 }

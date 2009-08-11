@@ -103,6 +103,7 @@
     <Compile Include="Dados\SQLServer\TipoCombustivelDados.cs" />
     <Compile Include="Dados\SQLServer\TipoDespesaDados.cs" />
     <Compile Include="Dados\SQLServer\VeiculoDados.cs" />
+    <Compile Include="DTO\RelatorioDespesasDTO.cs" />
     <Compile Include="DTO\RelatorioGeralDTO.cs" />
     <Compile Include="Forms\BuscaInfracoes.cs">
       <SubType>Form</SubType>
@@ -308,6 +309,7 @@
     <Compile Include="Negocio\ClassificacaoInfracaoNegocio.cs" />
     <Compile Include="Negocio\DespesaNegocio.cs" />
     <Compile Include="Negocio\DistribuidoraNegocio.cs" />
+    <Compile Include="Negocio\IAbastecimentoNegocio.cs" />
     <Compile Include="Negocio\IDespesaNegocio.cs" />
     <Compile Include="Negocio\IInfracaoNegocio.cs" />
     <Compile Include="Negocio\IManutencaoNegocio.cs" />

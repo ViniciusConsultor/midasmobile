@@ -37,5 +37,6 @@ namespace Midas.VeiculoZ.Dados
         decimal ObterTotalKMPorVeiculo(long id);
         decimal ObterGastoTotalPorVeiculo(long id);
         decimal ObterTotalLitrosPorVeiculo(long id);
+        double ObterGastoTotalPorVeiculoPeriodo(long id, DateTime data1, DateTime data2);
     }
 }
