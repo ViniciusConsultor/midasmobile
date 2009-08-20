@@ -304,6 +304,12 @@
     <Compile Include="Forms\Sobre.Designer.cs">
       <DependentUpon>Sobre.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\VerificarVersao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\VerificarVersao.Designer.cs">
+      <DependentUpon>VerificarVersao.cs</DependentUpon>
+    </Compile>
     <Compile Include="Negocio\AbastecimentoNegocio.cs" />
     <Compile Include="Negocio\CargaVeiculoz.cs" />
     <Compile Include="Negocio\ClassificacaoInfracaoNegocio.cs" />
@@ -326,6 +332,7 @@
     <Compile Include="Negocio\TipoCombustivelNegocio.cs" />
     <Compile Include="Negocio\TipoDespesaNegocio.cs" />
     <Compile Include="Negocio\VeiculosNegocio.cs" />
+    <Compile Include="Negocio\VerificadorVersoes.cs" />
     <Compile Include="Objetos\Abastecimento.cs" />
     <Compile Include="Objetos\Despesa.cs" />
     <Compile Include="Objetos\Distribuidora.cs" />
@@ -588,6 +595,9 @@
     <EmbeddedResource Include="Forms\ListagemMultas.resx">
       <DependentUpon>ListagemMultas.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\VerificarVersao.resx">
+      <DependentUpon>VerificarVersao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Imagens\480x800\Calculadora.png" />
     <EmbeddedResource Include="Imagens\480x800\IconeAdicionar.png" />

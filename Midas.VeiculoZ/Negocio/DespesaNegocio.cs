@@ -48,12 +48,18 @@ namespace Midas.VeiculoZ.Negocio
             RelatorioDespesasDTO rd1 = new RelatorioDespesasDTO();
             rd1.Valor = Negocio.NegocioFactory.Instancia.MultaNegocio.ObterGastoTotalPorPeriodoVeiculo(idveiculo, data1, data2);
             rd1.TipoDespesa = "Multas";
-            lista.Add(rd1);
+            if (rd1.Valor > 0)
+            {
+                lista.Add(rd1);
+            }
 
             RelatorioDespesasDTO rd2 = new RelatorioDespesasDTO();
             rd2.Valor = NegocioFactory.Instancia.PercursoNegocio.ObterGastoTotalPorVeiculoPeriodo(idveiculo, data1, data2);
             rd2.TipoDespesa = "Abastecimentos";
-            lista.Add(rd2);
+            if (rd2.Valor > 0)
+            {
+                lista.Add(rd2);
+            }
 
             DespesaDados despesaDados = (DespesaDados)this.AcessoDados;
             IList tiposDespesa = NegocioFactory.Instancia.TipoDespesaNegocio.Listar();
@@ -69,7 +75,10 @@ namespace Midas.VeiculoZ.Negocio
                     Despesa despesa = (Despesa)despesas[j];
                     rd.Valor += despesa.Valor;
                 }
-                lista.Add(rd);
+                if (rd.Valor > 0)
+                {
+                    lista.Add(rd);
+                }
             }
             return lista;
         }

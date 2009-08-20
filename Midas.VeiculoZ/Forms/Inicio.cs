@@ -29,6 +29,7 @@ using Midas.VeiculoZ.Objetos;
 using System.Collections;
 using System.Reflection;
 using Midas.VeiculoZ.Resolucao;
+using Midas.VeiculoZ.Negocio;
 
 namespace Midas.VeiculoZ.Forms
 {
@@ -42,6 +43,7 @@ namespace Midas.VeiculoZ.Forms
             CarregadorImagens.ObterImagemCompativel("MenuIconeDespesas", pIconeDespesas);
             CarregadorImagens.ObterImagemCompativel("MenuIconePostos", pIconePostos);
             CarregadorImagens.ObterImagemCompativel("Logo", pLogo);
+            // new VerificadorVersoes().NovaVersao();
         }
 
         public override void TratarDados()

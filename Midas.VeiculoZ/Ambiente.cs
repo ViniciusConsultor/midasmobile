@@ -25,6 +25,14 @@ namespace Midas.VeiculoZ
             resolucoes.Add(new Size(480,640));
         }
 
+        public string Versao
+        {
+            get
+            {
+                return "1.2";
+            }
+        }
+
         public string ObterResolucoesSuportadas()
         {
             string s = "";
