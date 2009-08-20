@@ -121,8 +121,8 @@
   <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAPAAAAAWCAYAAAD+SBENAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAALDwAA
-        Cw8BkvkDpQAAANVJREFUeF7t17ENwzAAxEB7NO0/lA17hm8IXIC0KsSnmNznnOfycQNuoHkDn8C+7sAG
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAALDgAA
+        Cw4BQL7hQQAAANVJREFUeF7t17ENwzAAxEB7NO0/lA17hm8IXIC0KsSnmNznnOfycQNuoHkDn8C+7sAG
         mhu4gGuCww23/9ezIRiCDXQ3QGB/IfyFCm+AwGF4ytkt54odgQmswOENEDgMb/WKO6dbcgITWIHDGyBw
         GJ5ydsu5YkdgAitweAMEDsNbveLO6ZacwARW4PAGCByGp5zdcq7YEZjAChzeAIHD8FavuHO6JScwgRU4
         vAECh+EpZ7ecK3YEJrAChzdA4DC81SvunG7JCUxgBQ5vgMBheMrZLeeK3QscyZ8iv2MQfQAAAABJRU5E
@@ -132,8 +132,8 @@
   <data name="pLogo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAdYAAAA5CAYAAACLfwq5AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAALDAAA
-        CwwBP0AiyAAAJ9tJREFUeF7tnQd8FlXW/yGF9JCEkE4KaaQASUiA9J4QQkf0VVBBmlgoUhQQxMbuCiiK
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAALCwAA
+        CwsBbQSEtwAAJ9tJREFUeF7tnQd8FlXW/yGF9JCEkE4KaaQASUiA9J4QQkf0VVBBmlgoUhQQxMbuCiiK
         VAULsiq9I1W6Um30Irsqusr633VdV3f33f/vPWeS647jzDzzhCeEwM3ncz/Pk+eZuXPvnfPc75xzzz2n
         aYcOHdDkGvz973/+0+Qvf/2uyffffd/E1dW1SYsWfk08PT2vwZXlJeQIyBGQIyBHQI7ANRwBBmt9lvT0
         DERHx8DLywcBzd0RHuSNQH8PuLu7ISgoCCkpKfV6/frsm6y7fmVHjq8cXykDUgYaoww0qc9GJyUlwc/P
@@ -309,8 +309,8 @@
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAVcAAABGCAYAAAB4zNeSAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAALDAAA
-        CwwBP0AiyAAAAytJREFUeF7t2MEJAlEQBFGNafOPTdEYug4DT/A+NEX9Yt/P83xefhawgAUssF3gJ1d/
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAALCwAA
+        CwsBbQSEtwAAAytJREFUeF7t2MEJAlEQBFGNafOPTdEYug4DT/A+NEX9Yt/P83xefhawgAUssF3gJ1d/
         G2AAAxjYMvAy6HZQe9oTAxj4fxEAAhAwgAEM7BkgV59FfBbCAAYCBsg1GFUF7CvApja9xgC5kqtqwQAG
         AgbINRj12gvrXlWIgT0D5EquqgUDGAgYINdgVBWwrwCb2vQaA+RKrqoFAxgIGCDXYNRrL6x7VSEG9gyQ
         K7mqFgxgIGCAXINRVcC+Amxq02sMkCu5qhYMYCBggFyDUa+9sO5VhRjYM0Cu5KpaMICBgAFyDUZVAfsK

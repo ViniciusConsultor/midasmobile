@@ -32,6 +32,7 @@ namespace Midas.VeiculoZ.Conversores
     /// </summary>
     public class AbastecimentoVisaoConversorDataReader:IConversor
     {
+
         #region IConversor Members
 
         public object Converter(object entrada)
@@ -40,6 +41,7 @@ namespace Midas.VeiculoZ.Conversores
             Abastecimento abastecimento = new Abastecimento();
             abastecimento.Id = dataReader.GetInt32(0);
             abastecimento.Data = dataReader.GetDateTime(2);
+            abastecimento.TanqueCheio = dataReader.GetBoolean(4);
             abastecimento.Valor = (double)dataReader.GetDecimal(6);
             abastecimento.ValorLitro = (double)dataReader.GetDecimal(7);
             return abastecimento;
@@ -48,4 +50,5 @@ namespace Midas.VeiculoZ.Conversores
         #endregion
 
     }
+
 }

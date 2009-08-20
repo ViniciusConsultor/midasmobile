@@ -69,7 +69,7 @@ namespace Midas.VeiculoZ.Forms
             this.lTitulo.Location = new System.Drawing.Point(5, 40);
             this.lTitulo.Name = "lTitulo";
             this.lTitulo.Size = new System.Drawing.Size(198, 17);
-            this.lTitulo.Text = "Gráfico Consumo Médio";
+            this.lTitulo.Text = "Gráfico Despesas";
             // 
             // pictureBox2
             // 

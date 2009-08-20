@@ -57,6 +57,7 @@ namespace Midas.VeiculoZ.Forms
 
             System.Windows.Forms.MenuItem miOpcoes = new System.Windows.Forms.MenuItem();
             System.Windows.Forms.MenuItem miOpcoesSobre = new System.Windows.Forms.MenuItem();
+            System.Windows.Forms.MenuItem mOpcoesAtualizacoes = new System.Windows.Forms.MenuItem();
             System.Windows.Forms.MenuItem miOpcoesCadastros_Abastecimento = new System.Windows.Forms.MenuItem();
             System.Windows.Forms.MenuItem miOpcoesCadastros = new System.Windows.Forms.MenuItem();
             System.Windows.Forms.MenuItem miOpcoesCadastros_TipoCombustivel = new System.Windows.Forms.MenuItem();
@@ -65,6 +66,15 @@ namespace Midas.VeiculoZ.Forms
             System.Windows.Forms.MenuItem miOpcoesCadastros_Manutencoes = new System.Windows.Forms.MenuItem();
             System.Windows.Forms.MenuItem miOpcoesCadastros_Distribuidoras = new System.Windows.Forms.MenuItem();
             System.Windows.Forms.MenuItem miOpcoesCadastros_Postos = new System.Windows.Forms.MenuItem();
+
+            // Atualizações.
+            
+            System.Windows.Forms.MenuItem mOpcoesAtualizacoes_NovaVersao = new System.Windows.Forms.MenuItem();
+            mOpcoesAtualizacoes_NovaVersao.Text = "Nova Versão";
+            mOpcoesAtualizacoes.Text = "Atualizações";
+            mOpcoesAtualizacoes.MenuItems.Add(mOpcoesAtualizacoes_NovaVersao);
+            mOpcoesAtualizacoes_NovaVersao.Click += new System.EventHandler(mOpcoesAtualizacoes_NovaVersao_Click);
+
 
             // Despesas
             System.Windows.Forms.MenuItem miOpcoesDespesas = new System.Windows.Forms.MenuItem();
@@ -118,6 +128,7 @@ namespace Midas.VeiculoZ.Forms
             miOpcoes.MenuItems.Add(miOpcoesCadastros_Manutencoes);
             miOpcoes.MenuItems.Add(miOpcoesDespesas);
             miOpcoes.MenuItems.Add(miOpcoesCadastros_Motorista);
+            miOpcoes.MenuItems.Add(mOpcoesAtualizacoes);
             miOpcoes.MenuItems.Add(miOpcoesSobre);
             m.MenuItems.Add(miOpcoes);
             m.MenuItems.Add(miRelatorios);
@@ -137,6 +148,11 @@ namespace Midas.VeiculoZ.Forms
         private void miOpcoesDespesas_Multas_Click(object sender, EventArgs e)
         {
             Program.FormStack.Push(typeof(ListagemMultas));
+        }
+
+        private void mOpcoesAtualizacoes_NovaVersao_Click(object sender, EventArgs e)
+        {
+            Program.FormStack.Push(typeof(VerificarVersao));
         }
 
         private void miOpcoesCadastros_Motorista_Click(object sender, EventArgs e)

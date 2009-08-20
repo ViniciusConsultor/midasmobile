@@ -137,8 +137,8 @@ namespace Midas.VeiculoZ.Forms
             {
                 m_ChartControl.Charts.ControlLayout.Titles.Distance = 5;
                 FormattedData title = m_ChartControl.Charts.ControlLayout.Titles.CreateTitle();
-                title.Data = "Gráfico de Despesas";
-                title.Font.Size = 9;
+                title.Data = "Gráfico de Despesas (R$)";
+                title.Font.Size = 10;
                 title.Font.Bold = true;
                 title.Color = Color.Transparent;
                 title.BorderColor = Color.Transparent;
@@ -186,11 +186,12 @@ namespace Midas.VeiculoZ.Forms
 		{
 			m_oChart.Legend.Placement = LegendPlacement.TopCenter;
 			m_oChart.Legend.Format = "{0}";
-			m_oChart.Legend.Font.Size = 10;
-			m_oChart.Legend.BorderColor = Color.LightGray;
-			m_oChart.Legend.BorderWidth = 1;
+			m_oChart.Legend.Font.Size = 8;
+			m_oChart.Legend.BorderColor = Color.Transparent;
+			m_oChart.Legend.BorderWidth = 0;
 			m_oChart.Legend.RadiusX = 5;
 			m_oChart.Legend.RadiusY = 5;
+            m_oChart.Legend.Columns = 4;
 			m_oChart.Legend.Foreground = Color.Black;
 		}
 
@@ -200,7 +201,7 @@ namespace Midas.VeiculoZ.Forms
 		private void CreateValueAxis()
 		{
 			ValueAxis axis = m_oChart.ValueAxisList.CreateValueAxis();
-			axis.Title.Data = "Despesas";
+			axis.Title.Data = "Valor (R$)";
 			axis.Title.Font.Size = 9;
 			axis.Title.Foreground = Color.Black;
 			axis.Title.Font.Bold = true;
@@ -217,12 +218,8 @@ namespace Midas.VeiculoZ.Forms
 			axis.ZeroLine.Thickness = 2;
 
 			ChartTypeProperties loChartProps = new ChartTypeProperties(m_oChart.ChartType);
-			axis.Orientation = (loChartProps.IsVerticalValue ?
-				Manco.Chart.CF.Layout.Orientation.Vertical :
-				Manco.Chart.CF.Layout.Orientation.Horizontal);
-			axis.Alignment = (loChartProps.IsVerticalValue ?
-				AxisAlignment.Left :
-				AxisAlignment.Right);
+            axis.Orientation = Manco.Chart.CF.Layout.Orientation.Horizontal;
+			axis.Alignment = (loChartProps.IsVerticalValue ? AxisAlignment.Left : AxisAlignment.Right);
 		}
 
 		/// <summary>
@@ -236,6 +233,8 @@ namespace Midas.VeiculoZ.Forms
             m_oChart.Element.Label.Foreground = Color.Black;
             m_oChart.Element.Gap = 0;
             m_oChart.Element.Label.Font.Size = 9;
+            m_oChart.ReferenceGrid.HorizontalMajor.Color = Color.LightBlue;
+            m_oChart.ReferenceGrid.VerticalMajor.Color = Color.LightBlue;
 		}
 
 		/// <summary>
@@ -243,20 +242,33 @@ namespace Midas.VeiculoZ.Forms
 		/// </summary>
 		private void ConfigureSeriesList()
 		{
+            m_oChart.Element.PercentageMode = PercentageMode.Series;
+            m_oChart.Element.Label.Font.Size = 9;
+
             m_oChart.SeriesList.Title.Alignment = TextAlignment.Left;
 			m_oChart.SeriesList.Title.Foreground = Color.Transparent;
             m_oChart.SeriesList.Title.Font.Size = 7;
-            m_oChart.SeriesList.Title.Font.Bold = false;
             m_oChart.SeriesList.Title.BorderColor = Color.Transparent;
+
+            m_oChart.SeriesList.Label.Font.Size = 7;
+            m_oChart.SeriesList.Label.Font.Bold = false;
+
             IList despesas = GerenciadorDados.Instancia.GetLista();
             Random random = new Random();
  			for (int i = 0; i < m_oChart.SeriesList.Count; i++)
 			{
                 DTO.RelatorioDespesasDTO dto = (DTO.RelatorioDespesasDTO)despesas[i];
-                m_oChart.SeriesList[i].Title = dto.TipoDespesa;
+                if (dto.TipoDespesa.Length > 10)
+                {
+                    m_oChart.SeriesList[i].Title = dto.TipoDespesa.Substring(0, 7) + ".";
+                }
+                else
+                {
+                    m_oChart.SeriesList[i].Title = dto.TipoDespesa;
+                }
                 m_oChart.SeriesList[i].Fill.Color = Color.FromArgb(random.Next(1,255),random.Next(1,255),random.Next(1,255));
 				m_oChart.SeriesList[i].Fill.BorderColor = Color.Black;
-				m_oChart.SeriesList[i].Fill.BorderWidth = 1;
+				m_oChart.SeriesList[i].Fill.BorderWidth = 0;
                 m_oChart.SeriesList[i].Shape = ShapeType.Rectangle;
 			}   
 		}
