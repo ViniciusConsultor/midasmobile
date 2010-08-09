@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Midas.SenhaZ", "SenhaZ\Midas.SenhaZ.csproj", "{981475AB-B600-4D47-A2E3-DB6EB75B0A8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Midas.Nucleo", "Midas.Nucleo\Midas.Nucleo.csproj", "{879F2AD8-7752-4105-B421-DF2B723A3233}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Midas.Financeiro", "Midas.Financeiro\Midas.Financeiro.csproj", "{EDF315A2-54D9-4998-A6E5-7A4F145BC326}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Midas.VeiculoZ", "Midas.VeiculoZ\Midas.VeiculoZ.csproj", "{0978CD7B-170A-4AC3-9748-E2384F3329E1}"
+EndProject
+Project("{B900F1C2-3D47-4FEC-85B3-04AAF18C3634}") = "Midas.VeiculoZ.Instalacao", "Midas.VeiculoZ.Instalacao\Midas.VeiculoZ.Instalacao.vddproj", "{E9731CAD-3CA3-40BB-A2CD-0DF610EC5F4F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Midas.LoteriaZ", "Midas.LoteriaZ\Midas.LoteriaZ.csproj", "{04A49FDE-67A5-487C-BCBE-4E931B324A00}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{981475AB-B600-4D47-A2E3-DB6EB75B0A8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{981475AB-B600-4D47-A2E3-DB6EB75B0A8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{981475AB-B600-4D47-A2E3-DB6EB75B0A8B}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{981475AB-B600-4D47-A2E3-DB6EB75B0A8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{981475AB-B600-4D47-A2E3-DB6EB75B0A8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{981475AB-B600-4D47-A2E3-DB6EB75B0A8B}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{879F2AD8-7752-4105-B421-DF2B723A3233}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{879F2AD8-7752-4105-B421-DF2B723A3233}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{879F2AD8-7752-4105-B421-DF2B723A3233}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{879F2AD8-7752-4105-B421-DF2B723A3233}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{879F2AD8-7752-4105-B421-DF2B723A3233}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDF315A2-54D9-4998-A6E5-7A4F145BC326}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDF315A2-54D9-4998-A6E5-7A4F145BC326}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDF315A2-54D9-4998-A6E5-7A4F145BC326}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{EDF315A2-54D9-4998-A6E5-7A4F145BC326}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDF315A2-54D9-4998-A6E5-7A4F145BC326}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDF315A2-54D9-4998-A6E5-7A4F145BC326}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{0978CD7B-170A-4AC3-9748-E2384F3329E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0978CD7B-170A-4AC3-9748-E2384F3329E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0978CD7B-170A-4AC3-9748-E2384F3329E1}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{0978CD7B-170A-4AC3-9748-E2384F3329E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0978CD7B-170A-4AC3-9748-E2384F3329E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0978CD7B-170A-4AC3-9748-E2384F3329E1}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{E9731CAD-3CA3-40BB-A2CD-0DF610EC5F4F}.Debug|Any CPU.ActiveCfg = Debug
+		{E9731CAD-3CA3-40BB-A2CD-0DF610EC5F4F}.Release|Any CPU.ActiveCfg = Release
+		{04A49FDE-67A5-487C-BCBE-4E931B324A00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04A49FDE-67A5-487C-BCBE-4E931B324A00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04A49FDE-67A5-487C-BCBE-4E931B324A00}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{04A49FDE-67A5-487C-BCBE-4E931B324A00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04A49FDE-67A5-487C-BCBE-4E931B324A00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04A49FDE-67A5-487C-BCBE-4E931B324A00}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
